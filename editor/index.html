@@ -3,12 +3,19 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
+    <link rel="stylesheet" href="./node_modules/simplemde/dist/simplemde.min.css">
+    <script src="./node_modules/simplemde/dist/simplemde.min.js"></script>
   </head>
  
   <body>
-    <h1>初めてのElectron</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <textarea id="mde" name="mdeSpace" row="1000" cols="500"></textarea>
+
+    <script>
+        var simplemde = new SimpleMDE({
+          element: document.getElementById("mde"),
+          autofocus: true,
+          spellChecker: false,
+          toolbar: ["heading-1", "heading-2", "heading-3", "bold", "strikethrough", "|", "code", "quote", "unordered-list" ,"ordered-list", "link", "image", "table", "|", "preview", "side-by-side", "fullscreen", "guide"]});
+      </script>
   </body>
 </html>
